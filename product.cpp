@@ -5,10 +5,10 @@
 using namespace std;
 
 Product::Product(const std::string category, const std::string name, double price, int qty) :
-    name_(name),
-    price_(price),
-    qty_(qty),
-    category_(category)
+name_(name),
+price_(price),
+qty_(qty),
+category_(category)
 {
 
 }

@@ -5,6 +5,9 @@
 #include "clothing.h"
 #include "movie.h"
 #include "util.h"
+
+#include <map>
+
 using namespace std;
 
 
@@ -130,8 +133,9 @@ std::string ProductBookParser::categoryID()
  */
 Product* ProductBookParser::makeProduct()
 {
+    book* newBook = new book(categoryID(), prodName_, price_, qty_, isbn_, author_);
 
-
+    return newBook;
 }
 
 
@@ -185,9 +189,9 @@ std::string ProductClothingParser::categoryID()
  */
 Product* ProductClothingParser::makeProduct()
 {
+    clothing* newClothing = new clothing(categoryID(), prodName_, price_, qty_, size_, brand_);
 
-
-
+    return newClothing;
 }
 
 
@@ -245,6 +249,8 @@ std::string ProductMovieParser::categoryID()
  */
 Product* ProductMovieParser::makeProduct()
 {
+    movie* newMovie = new movie(categoryID(), prodName_, price_, qty_, genre_, rating_);
 
+    return newMovie;
 
 }

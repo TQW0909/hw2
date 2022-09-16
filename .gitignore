@@ -1,0 +1,5 @@
+util.o
+book.o
+clothing.o 
+movie.o 
+product_parser.o
