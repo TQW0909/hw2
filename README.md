@@ -7,8 +7,8 @@
 
  - How we should compile your code (`g++` command or `make` target)
 	
-	- To compile my amazon.cpp code, just enter 'make clean' then 'make' in the terminal and all files will be compiled
-	- To check for memory leak, compile using above instructions then enter 'valgrind --tool=memcheck --leak-check=full ./amazon database.txt'
+	- To compile my amazon.cpp code, just enter `make clean` then `make` in the terminal and all files will be compiled
+	- To check for memory leak, compile using above instructions then enter `valgrind --tool=memcheck --leak-check=full ./amazon database.txt`
 
 
  - Design decisions you made or other non-trivial choices for your implementation
@@ -22,21 +22,21 @@
 	- UTIL.cpp TEST:
 		- IN: UTIL_test.cpp
 		- TO COMPILE: 
-			g++ -g -Wall -std=c++11 util.cpp UTIL_test.cpp -o UTIL_test
+			`g++ -g -Wall -std=c++11 util.cpp UTIL_test.cpp -o UTIL_test`
 		- TO RUN:
-			./UTIL_test
+			`./UTIL_test`
 	- NotEnoughMoneyInUserAccount Test:
 		- IN: test1.txt
 		- To COMPILE:
 			NOT REQUIRED
 		- TO RUN:
-			./amazon test1.txt
+			`./amazon test1.txt`
 	- NotEnoughProduct Test:
 		- IN: test2.txt
 		- To COMPILE:
 			NOT REQUIRED
 		- TO RUN:
-			./amazon test2.txt
+			`./amazon test2.txt`
 
 
  - Known errors/anything to help us grade (though we will run automated tests,
