@@ -8,6 +8,7 @@ class movie : public Product
 	public:
 		movie(const std::string category, const std::string name, double price, int qty,
 					const std::string isbn, const std::string author);
+		~movie();
 
 		// Returns the appropriate keywords that this product should be associated with
 		std::set<std::string> keywords() const;

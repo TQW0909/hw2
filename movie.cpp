@@ -13,12 +13,17 @@ Rating(rating)
 
 }
 
+movie::~movie()
+{
+
+}
+
 // Returns the appropriate keywords that this product should be associated with
 std::set<std::string> movie::keywords() const
 {
 	set<string> temp = parseStringToWords(name_);
-	temp.insert(Genre);
-	temp.insert(Rating);
+	set<string> genre = parseStringToWords(Genre);
+	temp = setUnion<string>(temp, genre);
 
 	return temp;
 }

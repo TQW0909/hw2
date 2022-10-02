@@ -13,12 +13,18 @@ Author(author)
 
 }
 
+book::~book()
+{
+
+}
+
 // Returns the appropriate keywords that this product should be associated with
 std::set<std::string> book::keywords() const
 {
 	set<string> temp = parseStringToWords(name_);
 	temp.insert(ISBN);
-	temp.insert(Author);
+	set<string> author = parseStringToWords(Author);
+	temp = setUnion<string>(temp, author);
 
 	return temp;
 }

@@ -13,12 +13,17 @@ Brand(brand)
 
 }
 
+clothing::~clothing()
+{
+	
+}
+
 // Returns the appropriate keywords that this product should be associated with
 std::set<std::string> clothing::keywords() const
 {
 	set<string> temp = parseStringToWords(name_);
-	temp.insert(clothingSize);
-	temp.insert(Brand);
+	set<string> brand = parseStringToWords(Brand);
+	temp = setUnion<string>(temp, brand);
 
 	return temp;
 }

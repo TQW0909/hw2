@@ -1,5 +1,12 @@
 util.o
+book
 book.o
 clothing.o 
 movie.o 
 product_parser.o
+mydatastore
+results
+test1.txt
+test2.txt
+UTIL_test
+UTIL_test.cpp

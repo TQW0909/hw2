@@ -14,7 +14,7 @@ template <typename T>
 std::set<T> setIntersection(std::set<T>& s1, std::set<T>& s2) // AND
 {
 	// If one set is empty, intersection will be empty set
-	if (s1.empty)
+	if (s1.empty())
 	{
 		return s1;
 	}
@@ -31,7 +31,7 @@ std::set<T> setIntersection(std::set<T>& s1, std::set<T>& s2) // AND
 		typename std::set<T>::iterator temp = s2.find(*it); // find() runs in O(log(n))
 
 		// Checking if templates in s1 are also in s2
-		if(temp != s2.end()) 
+		if (temp != s2.end()) 
 		{
 			tempSet.insert(*it);
 		}
@@ -43,7 +43,7 @@ template <typename T>
 std::set<T> setUnion(std::set<T>& s1, std::set<T>& s2) // OR
 {
 	// If one set is empty, union will be the non empty set
-	if (s1.empty)
+	if (s1.empty())
 	{
 		return s2;
 	}
@@ -59,7 +59,7 @@ std::set<T> setUnion(std::set<T>& s1, std::set<T>& s2) // OR
 	{
 		typename std::set<T>::iterator temp = s2.find(*it); // find() runs in O(log(n))
 
-		// Checking if templates in s2 are also in s1
+		// Checking if templates in s1 are also in s2
 		if(temp == s2.end())
 		{
 			tempSet.insert(*it);

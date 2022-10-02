@@ -10,6 +10,9 @@
 #include "product_parser.h"
 #include "util.h"
 
+#include "mydatastore.h"
+#include <queue>
+
 using namespace std;
 struct ProdNameSorter {
     bool operator()(Product* p1, Product* p2) {
@@ -29,8 +32,10 @@ int main(int argc, char* argv[])
      * Declare your derived DataStore object here replacing
      *  DataStore type to your derived type
      ****************/
-    DataStore ds;
-
+    // DataStore ds;
+		MyDataStore ds;
+		
+		
 
 
     // Instantiate the individual section and product parsers we want
@@ -100,9 +105,59 @@ int main(int argc, char* argv[])
                 done = true;
             }
 	    /* Add support for other commands here */
+						else if (cmd == "ADD")
+						{
+							string username;
+							int index;
+							if ((ss >> username) && (ss >> index))
+							{
+								username = convToLower(username);
 
+								// Checking if username and hit_result_index is valid
+								if (!(ds.userExist(username)) || index - 1 >= (int)hits.size())
+								{
+									cout << "Invalid request" << endl;
+									continue;
+								}
 
+								ds.addProductToCart(username, hits[index - 1]);
+							}
+						}
+						else if (cmd == "VIEWCART" )
+						{
+							string username;
+							if (ss >> username)
+							{
+								username = convToLower(username);
 
+								if (!(ds.userExist(username)))
+								{
+									cout << "Invalid username" << endl;
+									continue;
+								}
+
+								vector<Product*> temp = ds.viewCart(username);
+								displayProducts(temp);
+							}
+						}
+						else if (cmd == "BUYCART")
+						{
+							string username;
+							if (ss >> username)
+							{
+								username = convToLower(username);
+
+								if (!(ds.userExist(username)))
+								{
+									cout << "Invalid username" << endl;
+									continue;
+								}
+								
+								ds.buyCart(username);
+							}	
+						}
+
+			/* End of support for other commands */
 
             else {
                 cout << "Unknown command" << endl;
