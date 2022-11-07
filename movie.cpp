@@ -49,6 +49,7 @@ std::string movie::displayString() const
 // Outputs the movie info in the database format
 void movie::dump(std::ostream& os) const
 {
+	os << category_ << "\n" << name_ << "\n" << price_ << "\n" << qty_ << endl;
 	// category-specific-info
 	os << Genre << endl;	
 	os << Rating << endl;	

@@ -105,13 +105,20 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
 	}
 
 	// Having all the search term added to one set
+
+	
+	// set<string> termSet;
+	// for (vector<string>::iterator it = terms.begin(); it != terms.end(); ++it)
+	// {
+	// 	set<string> temp = parseStringToWords(*it);
+	// 	termSet = setUnion<string>(termSet, temp);
+	// }
+
 	set<string> termSet;
 	for (vector<string>::iterator it = terms.begin(); it != terms.end(); ++it)
 	{
-		set<string> temp = parseStringToWords(*it);
-		termSet = setUnion<string>(termSet, temp);
+		termSet.insert(*it);
 	}
-
 
 	// Looping through each product in our data store
 	for (map<string, Product*>::iterator i = MyProduct.begin(); i != MyProduct.end(); ++i)
@@ -145,12 +152,12 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
 // Reproduce the database file from the current Products and User values
 void MyDataStore::dump(std::ostream& ofile)
 {
-	// Checking if products and users are empty
-	if (MyProduct.empty() || MyUsers.empty())
-	{
-		cout << "ERROR: No Users or Products" << endl;
-		return;
-	}
+	// // Checking if products and users are empty
+	// if (MyProduct.empty() || MyUsers.empty())
+	// {
+	// 	cout << "ERROR: No Users or Products" << endl;
+	// 	return;
+	// }
 	
 	// Product Data
 	ofile << "<products>" << endl;

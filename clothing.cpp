@@ -49,6 +49,7 @@ std::string clothing::displayString() const
 // Outputs the clothing info in the database format
 void clothing::dump(std::ostream& os) const
 {
+	os << category_ << "\n" << name_ << "\n" << price_ << "\n" << qty_ << endl;
 	// category-specific-info
 	os << clothingSize << endl;	
 	os << Brand << endl;	

@@ -13,6 +13,7 @@
 
  - Design decisions you made or other non-trivial choices for your implementation
 	
+	- Please note that I have commented out the sorting function in the displayCart() function as it was altering the order of my view cart output
 	- I chose to use a std::map to store the products, the users, and the users' carts
 	- I chose to use a std::vector to model the users' carts
 
@@ -44,5 +45,4 @@ knowing what features may be broken/missing may help us provide some partial cre
 	
 	- My test files do not utilize GTest and just uses simple 'cout' and 'if' statements to test my program as I couldn't figure out how to use GTest.
 	- Please ignore the isMatch() function implementation, I thought it was required. I did not remove it because it says that it may be implemented in future projects.
-	- I was unable to get the dump() function in the Product class and its children class (book, clothing, and movie) to work properly. When called, dump() will only output the category specific data and not the product data (e.g. name, category...).
 	- My program does not check for non-int inputs for index in the 'ADD' command.

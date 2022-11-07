@@ -73,6 +73,7 @@ std::string book::displayString() const
 // Outputs the book info in the database format
 void book::dump(std::ostream& os) const
 {
+	os << category_ << "\n" << name_ << "\n" << price_ << "\n" << qty_ << endl;
 	// category-specific-info
 	os << ISBN << endl;	
 	os << Author << endl;	
